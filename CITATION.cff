@@ -8,11 +8,11 @@ type: software
 authors:
   - given-names: Maria Emilia
     family-names: Mazzone
-    email: mazzone@cloud4business.it
+    email: maila.mazzone@cloud4business.it
     affiliation: Cloud4Business S.r.l.
   - given-names: Stefano
     family-names: Falcone
-    email: falcone@cloud4business.it
+    email: stefano.falcone@cloud4business.it
     affiliation: Cloud4Business S.r.l.
 repository-code: https://github.com/cloud4business/c4b-nbs-pipeline
 url: https://www.cloud4business.it
