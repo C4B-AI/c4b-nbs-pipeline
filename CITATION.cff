@@ -1,0 +1,66 @@
+cff-version: 1.2.0
+title: >-
+  C4B-NbS-Pipeline: Open-source data ingestion pipeline for Copernicus
+  Sentinel-1/2 imagery integration with IoT environmental sensor streams
+message: >-
+  If you use this software, please cite it using the metadata from this file.
+type: software
+authors:
+  - given-names: Maria Emilia
+    family-names: Mazzone
+    email: mazzone@cloud4business.it
+    affiliation: Cloud4Business S.r.l.
+  - given-names: Stefano
+    family-names: Falcone
+    email: falcone@cloud4business.it
+    affiliation: Cloud4Business S.r.l.
+repository-code: https://github.com/cloud4business/c4b-nbs-pipeline
+url: https://www.cloud4business.it
+abstract: >-
+  A modular, open-source Python framework for ingesting, harmonising, and
+  integrating Copernicus Sentinel-1/2 satellite imagery with in-situ IoT
+  environmental sensor streams (LoRaWAN, MQTT) for evidence-based assessment
+  of Nature-Based Solutions. Designed for on-premise deployment to ensure
+  digital sovereignty over environmental data.
+keywords:
+  - nature-based-solutions
+  - copernicus
+  - sentinel
+  - earth-observation
+  - iot
+  - lorawan
+  - mqtt
+  - environmental-monitoring
+  - data-ingestion
+  - digital-sovereignty
+  - FAIR-data
+  - edge-computing
+license: Apache-2.0
+version: 0.1.0
+date-released: "2026-03-26"
+doi: 10.5281/zenodo.XXXXXXX
+references:
+  - type: report
+    authors:
+      - given-names: Stefano
+        family-names: Falcone
+      - given-names: Maria Emilia
+        family-names: Mazzone
+    title: >-
+      On-Premise AI Architectures for Sovereign Environmental Data Processing:
+      Design Principles and ISO 27001 Compliance Framework
+    year: 2026
+    institution:
+      name: Cloud4Business S.r.l.
+  - type: report
+    authors:
+      - given-names: Stefano
+        family-names: Falcone
+      - given-names: Maria Emilia
+        family-names: Mazzone
+    title: >-
+      Edge-Computing AI Nodes for Real-Time Adaptive Management of
+      Nature-Based Solutions: Architectural Specification and Deployment Protocol
+    year: 2026
+    institution:
+      name: Cloud4Business S.r.l.

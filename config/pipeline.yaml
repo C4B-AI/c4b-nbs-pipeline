@@ -1,0 +1,63 @@
+# C4B-NbS-Pipeline Configuration
+# ================================
+# Example configuration for a constructed wetland monitoring site.
+# Environment variables can be referenced with ${VAR_NAME} syntax.
+
+# --- Copernicus Sentinel Data ---
+copernicus:
+  cdse_client_id: "${CDSE_CLIENT_ID}"
+  cdse_client_secret: "${CDSE_CLIENT_SECRET}"
+  collections:
+    - SENTINEL-2
+    - SENTINEL-1
+  aoi:
+    type: "Polygon"
+    coordinates: [[[1.8, 41.8], [2.3, 41.8], [2.3, 42.1], [1.8, 42.1], [1.8, 41.8]]]
+  max_cloud_cover: 20
+  temporal_range: ["2025-01-01", "2025-12-31"]
+
+# --- IoT Sensors ---
+sensors:
+  mqtt:
+    broker: "localhost"
+    port: 8883
+    tls: true
+    ca_certs: "/etc/mqtt/ca.crt"
+    certfile: "/etc/mqtt/client.crt"
+    keyfile: "/etc/mqtt/client.key"
+    topics:
+      - "nbs/+/water_quality/#"
+      - "nbs/+/soil/#"
+      - "nbs/+/microclimate/#"
+    qos: 1
+
+  lorawan:
+    chirpstack_api: "localhost:8080"
+    api_token: "${CHIRPSTACK_API_TOKEN}"
+    application_id: "nbs-monitoring"
+    poll_interval: 30
+
+# --- Processing ---
+processing:
+  target_crs: "EPSG:3035"
+  temporal_resolution: "1h"
+  gap_fill_max_hours: 6
+  indices:
+    - NDVI
+    - NDWI
+    - EVI
+    - SAVI
+  cloud_mask_classes: [3, 8, 9, 10, 11]
+
+# --- Output ---
+output:
+  data_dir: "/data/nbs-pipeline"
+  metadata_standard: "dublin_core"
+  format: "zarr"
+  stac_catalogue: true
+
+# --- Logging ---
+logging:
+  level: "INFO"
+  format: "json"
+  file: "/var/log/c4b-nbs-pipeline/pipeline.log"
